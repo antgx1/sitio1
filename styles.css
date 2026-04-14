@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.google-sans-bar {
+  font-family: "Google Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  font-variation-settings:
+    "GRAD" 0;
+}
+
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #af3535;
+    padding: 10px;
+}
+
+.navlinks{
+    display: flex;
+    gap: 10px;
+}
+
+.navlinks a{
+    color: orange;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+a:hover{
+    color: blue;
+}
+
+.bienvenida{
+    display: flex;
+    justify-content: center;
+    background: #62b8ce;
+    flex-direction: column;
+    padding: 100px;
+    gap: 30px;
+    height: 300px;
+}
+
+.textbox{
+    display: flex;
+    width: 1000px;
+    height: 10px;
+    justify-content: left;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+.retrato{
+    display: flex;
+    width: 200px;
+    height: 200px;
+    justify-content: right;
+    align-items: center;
+}

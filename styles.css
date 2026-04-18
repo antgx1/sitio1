@@ -55,14 +55,14 @@ a:hover{
 .textbox{
     display: flex;
     width: 700px;
-    height: 10px;
+    height: 50px;
     justify-content: left;
     color: #fff;
     font-weight: bold;
 }
 
 .retrato{
-    display: flex;
+    /* display: flex; */
     width: 100px;
     height: 100px;
     justify-content: right;

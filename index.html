@@ -128,7 +128,45 @@
                 </div>
             </div>
         </section>
-        <section class="contacto" id="contacto"></section>
+        <section class="contacto" id="contacto">
+            <h2 class="google-sans-bar"><strong>Contacto</strong></h2>
+            <h3 class="google-sans-bar">Envíame un mensaje</h3>
+            <form action="/contacto" method="POST">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre"
+                        required placeholder="Tu nombre completo">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"
+                        required placeholder="tu@correo.com">
+                <label for="asunto">Asunto:</label>
+                <select id="asunto" name="asunto">
+                    <option value="">Selecciona...</option>
+                    <option value="info">Información</option>
+                    <option value="soporte">Soporte</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5"
+                        required placeholder="Escribe tu mensaje aquí..."></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <aside>
+                <h3>Otras formas de contactarme</h3>
+                <p><a href="mailto:antonio.rios02@inacapmail.cl">Enviar correo a INACAP Mail</a></p>
+                <p><a href="https://www.linkedin.com/in/antonio-r-443118321/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                <p><a href="https://www.github.com/antgx1" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+            </aside>
+        </section>
     </main>
+    <footer>
+        <nav class="footer google-sans-bar">
+            <div class="logo"><img src="" alt="Logo" width="32" height="32">Antonio Ríos Romero</div>
+            <div class="navlinks">
+                <a href="https://www.linkedin.com/in/antonio-r-443118321/" target="_blank" rel="noopener noreferrer"><img src="" alt="LinkedIn" width="100" height="132"></a>
+                <a href="https://www.github.com/antgx1" target="_blank" rel="noopener noreferrer"><img src="" alt="GitHub" width="100" height="132"></a>
+            </div>
+        </nav>
+        <p>&copy; 2026 Antonio Ríos Romero. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

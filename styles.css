@@ -8,11 +8,11 @@
     --color-primary: #028090;
     --color-primary-dark: #015A66;
     --color-accent: #38BDF8;
-    --color-bg: #F8FAFC;
+    --color-bg: #F1F3F5;
     --color-text: #1E293B;
-    --color-muted: #64748B;
+    --color-muted: #4e5a6a;
     --color-white: #FFFFFF;
-    --color-border: #E2E8F0;
+    --color-border: #435270;
     --font-main: "Google Sans", sans-serif;
     --font-heading: "Merriweather Sans", sans-serif;
 }
@@ -30,8 +30,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #af3535;
+    background: #ff6b33;
     padding: 10px;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .navlinks{
@@ -40,7 +42,7 @@
 }
 
 .navlinks a{
-    color: orange;
+    color: black;
     text-decoration: none;
     font-size: 20px;
 }
@@ -52,42 +54,139 @@ a:hover{
 .bienvenida{
     display: flex;
     flex-wrap: wrap;
-    flex: 1 1 200px;
-    background: #62b8ce;
+    flex-direction: row;
+    background: #77c0d3;
     padding: 10px;
-    gap: 30px;
-    height: 200px;
+    gap: 15px;
+    height: auto;
 }
 
 .presentacion{
-    max-width: 600px;
+    max-width: 100%;
     margin: 10px auto;
-    padding: 0 20px;
+    padding: 0 15px;
+    font-size: 14px;
+}
+
+.presentacion h1{
+    color: #0e191e;
+}
+
+.presentacion h2{
+    color: #192d3c;
 }
 
 .retrato{
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 0 20px;
-    float: right;
+    max-width: 100%;
+    margin: 10px auto;
+    padding: 0 15px;
+    float: none;
 }
 
-.sitio{
+.sitio {
     display: grid;
     grid-template-areas:
-        "header  header header"
-        "main main sidebar"
-        "footer  footer footer";
-    grid-template-columns: 160px 1fr 160px;
-    grid-template-rows: auto 1fr auto;
+        "header"
+        "main"
+        "sidebar"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto auto;
     min-height: 100vh;
     gap: 0;
-    }
+}
 
 header  {grid-area: header;}
 aside   {grid-area: sidebar;}
 main    {grid-area: main;}
 footer  {grid-area: footer;}
+
+@media (min-width: 480px) {
+    .bienvenida{
+        flex-direction: row;
+        padding: 15px;
+        gap: 20px;
+        height: auto;
+    }
+
+    .presentacion{
+        max-width: 100%;
+        flex: 1;
+        padding: 0 15px;
+        font-size: 15px;
+    }
+
+    .retrato{
+        max-width: 280px;
+        padding: 0;
+    }
+
+    .sitio {
+        grid-template-areas:
+            "header header"
+            "main sidebar"
+            "footer footer";
+        grid-template-columns: 1fr 160px;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .contenido {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (min-width: 768px) {
+        .bienvenida{
+        flex-direction: row;
+        padding: 20px;
+        gap: 30px;
+        height: 200px;
+    }
+
+    .presentacion{
+        max-width: 600px;
+        flex: 1;
+        padding: 0 20px;
+        font-size: 16px;
+    }
+
+    .retrato{
+        max-width: 300px;
+        padding: 0 20px;
+    }
+
+    .sitio {
+        grid-template-areas:
+            "header header header"
+            "main main sidebar"
+            "footer footer footer";
+        grid-template-columns: 160px 1fr 160px;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .contenido {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .navbar {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        max-width: 1200px;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 
 body{
     font-family: var(--font-main);
@@ -110,13 +209,19 @@ section{
 
 h1{
     font-family: var(--font-heading);
-    color: var(--color-primary-dark);
-    margin-bottom: 10px;
+    color: var(--color-primary);
+    margin-bottom: 15px;
 }
 
 h2{
     font-family: var(--font-heading);
-    color: var(--color-primary);
+    color: #405179;
+    margin-bottom: 10px;
+}
+
+h3{
+    font-family: var(--font-heading);
+    color: #405078;
     margin-bottom: 10px;
 }
 
@@ -132,6 +237,7 @@ h2{
     background-color: var(--color-white);
     padding: 25px;
     margin-bottom: 20px;
+    border-radius: 8px;
 }
 
 .cita{
@@ -142,7 +248,11 @@ h2{
 aside{
     float: right;
     background-color: lightgray;
-    color: var(--color-muted);
+    color: #284343;
+}
+
+aside h3{
+    color: #303f3f;
 }
 
 .caja{
@@ -168,7 +278,7 @@ th, td {
 }
 
 th {
-    background-color: var(--color-primary);
+    background-color: #02626e;
     color: var(--color-white);
 }
 
@@ -194,8 +304,23 @@ figcaption{
 form{
     display: flex;
     flex-wrap: wrap;
-    flex: 1 1 200px;
     gap: 15px;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+label{
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    color: var(--color-text);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
 }
 
 .btn{
@@ -204,9 +329,11 @@ form{
     color: var(--color-white);
     padding: 8px 20px;
     text-decoration: none;
+    border: none;
     border-radius: 4px;
     font-size: 0.9rem;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .footer{
@@ -220,4 +347,5 @@ form{
 .copy{
     color: var(--color-muted);
     font-size: 0.9rem;
+    text-align: center;
 }
